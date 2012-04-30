@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"; xml:lang="en" lang="en">
+	<head>
+		<title>
+			Make-A-Plate License Plate Generator
+		</title>
+		<link rel='stylesheet' type='text/css' href='lp.fonts.css' />
+		<link rel='stylesheet' type='text/css' href='lp.style.css' />
+		<link rel='stylesheet' type='text/css' href='http://tools.sbr.so/prettify/prettifyDark.css' />
+		
+	</head>
+
+	<body>
+		<div id='wrapper'>
+			<div class='header'>
+				<div class='logo'>
+					<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wEHAUJIkQOAFUAAAuwSURBVGje7VppdBRVFv5eVe8bSSd0AiSEQBaWGI1hc0RGIBhywAMHHOM6uKFyEDkKbrghMAyMcJxhFGRw4AA6Q0RgkBEUB2SRQYEIRISsEEKAQBJCeqnqrerND6syL0XS6Qj4i+pzT9ep9Fu+e++797u3Aty8bl435CLXe0JKKTnZP9dFJckFjgd0HKEyQIgMKlNi7NWrIm3bJhEACCH0eq2ru16bB8AB4AEEZVHcSYABWm0RShGuOfsWgCUAZEqpDEACIF8rKO5aAVBKDQDMACwAbLUvvZ4NSge0bX8CWRCmKuvaAFgVMVJK9YpCfj0glFJQSvXK5i3KZmwALMKB7x+KtBsqSd3q/7o8mxlnUccCMFFKeUrpjQdCKeUYC1gAWC7+6b20yx+v7wlAL11uugckAhRC4N7+9VgAtvOz5+SIJcedGoVYFAuRGwJEsYJOAWEGYGlcvS6p9LahSxs+WPFfY78MHoBJFoSciNGFEITrG4YCMPpLy4eenlB4sHLEmOnBi5fsGgWZFaVdPyCKqXXMQsbKvHGP1c394wG52T2J6HSCNfd235UNm2+BLHc4n+RuzgZgdOSPKqOSZA1W18yqHJa389yLrw5S1jCpCqOU8tcFiAaEKXypwVKaPXhloLJqAQGMAMBZrWcAOHyHDg+I6FbqnIIYDyA2/pknz7cAD4eTrmzasrGqYMJk/DyvCsgUDZhoLMKrkwbP1trKh4/eLLs9YwmzYX33xAoAXYJnzmaSKICAEDRt2tIXgIEzm5tZt/OfLJtTPixvtqI8kyLGjtyMi+JgmxQNGaryx/8Tfn9OK61TCt7p9AGwyM3ubogSSKCsMgWAndisjdozFKo9N6Uyb9xzAAwMGEOkaMZ14FIGBQRfNnDYQioIQ9iNUkqhS3CVJr792l4AxnBjY8+o6AQhCJw61RtAF9fMGZ8Qo7H5qr9XVs2smTJtpLK+Kvr2wHAdZH0DAEP1o0+NDDc0PqIFYcxI35fx/Z4FpswMGYBNn5DQBAqQDj6QAXNmhhuAxflw4cXe2za9xdltF7VgvDt3vy8eORrDKNTY3p5JBGuY1ax7ok9WCWTZyf7d0Dv1QPqubcuU37S4X83Ehwv9h49mEY60Y2kZzunPbo2f9XwxgDCAAIBA6FK9XDWi4B1ZEOJauW183L8zD387A0AQgE+RoPYschGsoQegqxw19gkqSc5Wp99uv5C+a9uHarxnc0vPTZ9sd4wvKCaSDE5ZQBXCcXLConlb42c9X6Vk85axeldXPunDvyymYHzn55wzrnHV2lRlP6pwHVpEsYZJ0TRfmj1kAx8bU6tLTGiw5OacteTmuK3D7xQ4vV7NKSYmVLb4ctN7ywZcWfL+HYRXIqfRGE5Yu/wr89BB9Yolgoo1/IqIAETpSnPIu/dbm1hy3C4e+zEpdP5CEme1lqft+Hyp8hsfAB8hJNQREMLwH6tGzACsgSM/JoZKy5NsD06qY56b2QgDQO8t2pTc9Mo7gzlnjN9VtGq/Pr2PRwERUkCI6rfUdCXs37nXYfzNkDO67glNAATGldh7VUTWvdoColNB+A8c6ir8Y+PgUHnlELnZnUY93hTZJ3QnsqynsgzLxHE7nEsXHmLOiYU9LwB4cefeeENWX4FPcAUUyh7SWEOkgHDxrrH3SdU1KQAAg8FH7NY6Ps5ZxcXGnDbkZB90vDqjmPC8hwVFCJHbBdL4+HOu0JHjk2WvdxICgUEA4SIwWdhenPqFY+a06jYsY1T8mVfWoW24lAjA0zDh0ZHB4mNpkZIp5YjA2W17+ATXv5xFH23g45weQki4XSB1ybcWE0pvj5pMyjIc783fZr5//BWG8KnnxqAEDgJAZqwhqv7ePPWlAf7Pv+xHuOiJOLHb5nc9sX8eISTYbtQiIDxB9B+O4+GdNWdM8NCROMUCbDY2M7VKC0VXreVb/EFmYMuX/TiOR2fWJITjAXBscuTaypCdFko5zwPPjAxXVduY0G1kgFg150cvfrKxu7h4+S08z3d+PY4jWm+6qmb3cTJAZXT6Cov60EtvZiVuWleqzKtjrKNXzoWkPOcvvTGvL4xEedTJapCT4OwYSBj4JaWm3e7vvnzJcUXjVNEY25Qg7LmMWf7uidpnpmd15my0JGROJte1+fD/mXmp16fr9ugTXH61K8LkC78SLgPKszAA2mXM6MuJc984RsPhX9Q1UJQVAQghnk5NCdDklR9sN/XNcDMA1DDrV+K+V/kOKOBCAMJxkx+pcT45uYRKUucwEM6jBcJr6Ym9YPQG7/4DZZAkjobDLlBqjpRHus19c2vMhHsvKm7aQquYkBvW5A81hwQABOx3Dz8rlvxkCJ463bXdPEIpYDLW6LrGbzEPHfx6ny82bgYQIoRIbeYRJZwZlXBpo4ClfunyW4RDxYPkpqbU0KX6/rIoxskerwuyjLinn9ia+MYrZUw756qE2Pz5F/Gm7Cy/sVeKX2MpNSEKALynxt03Rjz+Uzo4IutiY88Ts7nJ0KP7CV23xCpHwehDjvzRZzTW9bJ8qy2KotfEfivTqrECsMqCYPefKEu0DMwJakJrqxDbuHptz7o5C/rzDns4Zf2aH8wD+nuYpNgKjCyKfn9FJWfOyrpAOCK0w69U8QIQ2rUIU96qm9Od7J/7JWezNugSXOfNWf1rDL1TRUfBPY2GpB4cYwU2mxsB6C/MWZB9edWa/i3sl+flpGV/PuC4Z1QdQxoDyoZbAAmHfzCKR0ssYsnx+GD1mfhg7fnefBfHsfRvti9i2a8CpEMaryYyy6nxhQ+Kx0oWthpkNjX1PfbdbKI3mNpwJ8OZx6bkeb/Zl6YNrRQUia+/vC/uqcfLGTCqZQT3V1/Hnn16+qvsOEplJK94f5QjP++cxiqtiiuurXqaOaDh3luKiojBcE7TzomtGDl2GkPD/QD8cjAYqBo7Kd+7+9u0tvIDAUHd3IV3XZjzh0yViiviD5RX6s7NePm5VuMohT45aYMjP+8CG+0AhKOtEMPMQNrl3oIXKNt4IwShs7VZFSMKnpUDAbWu8Jwad9/4wE8nUiOxWMLzuLx63bC6+YsyVbcSfjhqOj3xwZk0ELC1rlN5T+rG9e8y9F8VOaqEqLT4g+rB7LFk4SFDSs8VtFUVShA6XX1bxR0jXhOKj5gACLLHY4qmHUQIQajuoh6Ar3HFquTqwt+/Ivt8Tq2Lxzzwu+l6V7yPCRAhJex2qouiNgaCAKT0vTsW8bExu1rRF0IgXW7qUb902UAAfp2ra0201N+UkX4agLvhb6vuRThs0oKwDBk4r/v8tw8r67MidaodxFhFjS5yZvH+aXxMlz1UC6bhsh2AwHfpcikqnkYpjJnptQA8kscddxWInFsXpxatK9IUYYG2uifRci2JASISjvNnHv3uaX23hCIWTPDcuVQAbmNGWnm07zYc+XnlAMJU9FsZuhO2/XbY7NTN69cwPK2FBUR6q8V15MuaCf0AAhkHdr9pG37nDHCcGwBkt6cngGbLkEGl0ViEs9nqAbgbVq9LACEApSBmc5nr5RfuT1mzcqsGgKjcS9fUxFbAaJNXIGXtR9t7fbpulD45aQ2VJIPv4GG7Y/TIk+D5DosZXZzzOICA96v/ZBKjsdE8eNC8fieKC7tOnVLGbFxk7sMdNcejehlKCAGlNKBxOcmSmyOl792x0LN73wpZEAwAgrzDcUR2u3Mj9ZT1PZMPAvA78kfvSvn476uJThdiIpOWXIaj6fBH/VaXASNpJGS/+66A2v7RdUvYGWxuzkUEJhvzUOEOAD7n449UMElOCyTIcqnr+g6REAKlBSMyvEdgOVDsw4WfRTrwxGCoiRk3pryd5ptKFv2dAfGLK0SlMeZvi6HGPfpQBTEajrZnDV2Ca6ViSV8bAFQO1ela+5r/80HRPqc2FQDwTUWfWQKnz1iIjucIryNqe46GgjRm4vhmY1oflWZIbPkb1duuGwWkjb4xmGYD27ZRtSwr9/K1bv7mdfP6Fa7/AX+nYv7zWFBuAAAAAElFTkSuQmCC' />
+					<span>CodeFoo<i>2</i> Application: Make-A-Plate</span>
+				</div>
+				<div class='nav'>
+					Return to main page
+				</div>
+			</div>
+			<div class='content'>
+				<h1>Make-A-Plate</h1>
+				<h2>Input your group&#39;s name and population and see the possibilities fly!</h2>
+				
+				<span class='nameTitle'>Name your Town /State /Country /World</span><br />
+				<input type='text' class='name' /><br />
+				<span class='popTitle'>Population:</span><br />
+				<input type='text' class='pop' /><br />
+				<span class='qp'>Quick Population: <span class='run10'>10</span> | <span class='run25'>25</span> |
+				<span class='runUtah'>of the State of Utah</span> |
+				<span class='runUS'>of the United States</span> |
+				<span class='runNA'>of North America</span> |
+				<span class='runWorld'>of the World</span></span>
+				<button class='run'>
+					Generate
+				</button><br />
+				
+				
+				<div class='output'>
+				
+					<div class='mockup'>
+						<div class='plate'>
+							<span class='plateName'>Test Name</span>
+							<span class='plateMain'>XXXXXXX</span>
+						</div>
+					</div>
+				</div>
+				<div class='possible'>
+					
+				</div>
+			</div>
+			<div class='code'>
+				<h1>Script code</h1>
+				<h2>in lp.functions.js:</h2>
+<pre class="prettyprint linenums lang-js">
+$.fn.plateGen = function(pop) { 
+    	var loadGif = &#39;&lt;img src=&quot;data:image/gif;base64,R0lGODlhEAAQAPIAAP////////7+/v7+/v////7+/v7+/v7+/iH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==&quot; /&gt;&#39;;
+    	
+    	$(this).html(loadGif+&#39;Loading...&#39;);
+    	var digits;
+    	/*Check how many digits*/
+    	if (pop &lt;= 26){
+		digits = 1;
+    	}
+    	else if (pop &lt;= 676 &amp;&amp; pop &gt; 26){
+    		digits = 2;
+    	}
+    	else if (pop &lt;= 17576 &amp;&amp; pop &gt; 676){
+    		digits = 3;
+    	}
+    	else if (pop &lt;= 456976 &amp;&amp; pop &gt; 17576){
+    		digits = 4;
+    	}
+    	else if (pop &lt;= 11881376 &amp;&amp; pop &gt; 456976){
+    		digits = 5;
+    	}
+    	else if (pop &lt;= 308915776 &amp;&amp; pop &gt; 11881376){
+    		digits = 6;
+    	}
+    	else if (pop &lt;= 8031810176 &amp;&amp; pop &gt; 308915776){
+    		digits = 7;
+    	}
+    	
+    				
+    	/*narrow down within digit range*/
+    	var store = [1,2,3,4,5,6,7];
+    	 	store[1] = [&#39;n&#39;, &#39;c&#39;],
+    	 	store[2] = [&#39;nn&#39;, &#39;nc&#39;, &#39;cn&#39;, &#39;cc&#39;],
+    	 	store[3] = [&#39;nnn&#39;, &#39;nnc&#39;, &#39;ncn&#39;, &#39;ncc&#39;, &#39;cnn&#39;, &#39;cnc&#39;, &#39;ccn&#39;, &#39;ccc&#39;],
+    	 	store[4] = [&#39;nnnn&#39;, &#39;nnnc&#39;, &#39;nncn&#39;, &#39;nncc&#39;, &#39;ncnn&#39;, &#39;ncnc&#39;, &#39;nccn&#39;, &#39;nccc&#39;, &#39;cnnn&#39;, &#39;cnnc&#39;, &#39;cncn&#39;, &#39;cncc&#39;, &#39;ccnn&#39;, &#39;ccnc&#39;, &#39;cccn&#39;, &#39;cccc&#39;],
+    	 	store[5] = [&#39;nnnnn&#39;, &#39;nnnnc&#39;, &#39;nnncn&#39;, &#39;nnncc&#39;, &#39;nncnn&#39;, &#39;nncnc&#39;, &#39;nnccn&#39;, &#39;nnccc&#39;, &#39;ncnnn&#39;, &#39;ncnnc&#39;, &#39;ncncn&#39;, &#39;ncncc&#39;, &#39;nccnn&#39;, &#39;nccnc&#39;, &#39;ncccn&#39;, &#39;ncccc&#39;, &#39;cnnnn&#39;, &#39;cnnnc&#39;, &#39;cnncn&#39;,&#39;cnncc&#39;,&#39;cncnn&#39;, &#39;cncnc&#39;,&#39;cnccn&#39;,&#39;cnccc&#39;,&#39;ccnnn&#39;,&#39;ccnnc&#39;,&#39;ccncn&#39;,&#39;ccncc&#39;,&#39;cccnn&#39;,&#39;cccnc&#39;,&#39;ccccn&#39;,&#39;ccccc&#39;],
+    	 	store[6] = [&#39;nnnnnn&#39;,&#39;nnnncn&#39;,&#39;nnncnn&#39;,&#39;nnnccn&#39;,&#39;nncnnn&#39;,&#39;nncncn&#39;,&#39;nnccnn&#39;,&#39;nncccn&#39;,&#39;ncnnnn&#39;,&#39;ncnncn&#39;,&#39;ncncnn&#39;,&#39;ncnccn&#39;,&#39;nccnnn&#39;,&#39;nccncn&#39;,&#39;ncccnn&#39;,&#39;nccccn&#39;,&#39;cnnnnn&#39;,&#39;cnnncn&#39;,&#39;cnncnn&#39;,&#39;cnnccn&#39;,&#39;cncnnn&#39;,&#39;cncncn&#39;,&#39;cnccnn&#39;,&#39;cncccn&#39;,&#39;ccnnnn&#39;,&#39;ccnncn&#39;,&#39;ccncnn&#39;,&#39;ccnccn&#39;,&#39;cccnnn&#39;,&#39;cccncn&#39;,&#39;ccccnn&#39;,&#39;cccccn&#39;,&#39;nnnnnc&#39;,&#39;nnnncc&#39;,&#39;nnncnc&#39;,&#39;nnnccc&#39;,&#39;nncnnc&#39;,&#39;nncncc&#39;,&#39;nnccnc&#39;,&#39;nncccc&#39;,&#39;ncnnnc&#39;,&#39;ncnncc&#39;,&#39;ncncnc&#39;,&#39;ncnccc&#39;,&#39;nccnnc&#39;,&#39;nccncc&#39;,&#39;ncccnc&#39;,&#39;nccccc&#39;,&#39;cnnnnc&#39;,&#39;cnnncc&#39;,&#39;cnncnc&#39;,&#39;cnnccc&#39;,&#39;cncnnc&#39;,&#39;cncncc&#39;,&#39;cnccnc&#39;,&#39;cncccc&#39;,&#39;ccnnnc&#39;,&#39;ccnncc&#39;,&#39;ccncnc&#39;,&#39;ccnccc&#39;,&#39;cccnnc&#39;,&#39;cccncc&#39;,&#39;ccccnc&#39;,&#39;cccccc&#39;],
+    	 	store[7] = [&#39;nnnnnnn&#39;,&#39;nnnncnn&#39;,&#39;nnncnnn&#39;,&#39;nnnccnn&#39;,&#39;nncnnnn&#39;,&#39;nncncnn&#39;,&#39;nnccnnn&#39;,&#39;nncccnn&#39;,&#39;ncnnnnn&#39;,&#39;ncnncnn&#39;,&#39;ncncnnn&#39;,&#39;ncnccnn&#39;,&#39;nccnnnn&#39;,&#39;nccncnn&#39;,&#39;ncccnnn&#39;,&#39;nccccnn&#39;,&#39;cnnnnnn&#39;,&#39;cnnncnn&#39;,&#39;cnncnnn&#39;,&#39;cnnccnn&#39;,&#39;cncnnnn&#39;,&#39;cncncnn&#39;,&#39;cnccnnn&#39;,&#39;cncccnn&#39;,&#39;ccnnnnn&#39;,&#39;ccnncnn&#39;,&#39;ccncnnn&#39;,&#39;ccnccnn&#39;,&#39;cccnnnn&#39;,&#39;cccncnn&#39;,&#39;ccccnnn&#39;,&#39;cccccnn&#39;,&#39;nnnnncn&#39;,&#39;nnnnccn&#39;,&#39;nnncncn&#39;,&#39;nnncccn&#39;,&#39;nncnncn&#39;,&#39;nncnccn&#39;,&#39;nnccncn&#39;,&#39;nnccccn&#39;,&#39;ncnnncn&#39;,&#39;ncnnccn&#39;,&#39;ncncncn&#39;,&#39;ncncccn&#39;,&#39;nccnncn&#39;,&#39;nccnccn&#39;,&#39;ncccncn&#39;,&#39;ncccccn&#39;,&#39;cnnnncn&#39;,&#39;cnnnccn&#39;,&#39;cnncncn&#39;,&#39;cnncccn&#39;,&#39;cncnncn&#39;,&#39;cncnccn&#39;,&#39;cnccncn&#39;,&#39;cnccccn&#39;,&#39;ccnnncn&#39;,&#39;ccnnccn&#39;,&#39;ccncncn&#39;,&#39;ccncccn&#39;,&#39;cccnncn&#39;,&#39;cccnccn&#39;,&#39;ccccncn&#39;,&#39;ccccccn&#39;,&#39;nnnnnnc&#39;,&#39;nnnncnc&#39;,&#39;nnncnnc&#39;,&#39;nnnccnc&#39;,&#39;nncnnnc&#39;,&#39;nncncnc&#39;,&#39;nnccnnc&#39;,&#39;nncccnc&#39;,&#39;ncnnnnc&#39;,&#39;ncnncnc&#39;,&#39;ncncnnc&#39;,&#39;ncnccnc&#39;,&#39;nccnnnc&#39;,&#39;nccncnc&#39;,&#39;ncccnnc&#39;,&#39;nccccnc&#39;,&#39;cnnnnnc&#39;,&#39;cnnncnc&#39;,&#39;cnncnnc&#39;,&#39;cnnccnc&#39;,&#39;cncnnnc&#39;,&#39;cncncnc&#39;,&#39;cnccnnc&#39;,&#39;cncccnc&#39;,&#39;ccnnnnc&#39;,&#39;ccnncnc&#39;,&#39;ccncnnc&#39;,&#39;ccnccnc&#39;,&#39;cccnnnc&#39;,&#39;cccncnc&#39;,&#39;ccccnnc&#39;,&#39;cccccnc&#39;,&#39;nnnnncc&#39;,&#39;nnnnccc&#39;,&#39;nnncncc&#39;,&#39;nnncccc&#39;,&#39;nncnncc&#39;,&#39;nncnccc&#39;,&#39;nnccncc&#39;,&#39;nnccccc&#39;,&#39;ncnnncc&#39;,&#39;ncnnccc&#39;,&#39;ncncncc&#39;,&#39;ncncccc&#39;,&#39;nccnncc&#39;,&#39;nccnccc&#39;,&#39;ncccncc&#39;,&#39;ncccccc&#39;,&#39;cnnnncc&#39;,&#39;cnnnccc&#39;,&#39;cnncncc&#39;,&#39;cnncccc&#39;,&#39;cncnncc&#39;,&#39;cncnccc&#39;,&#39;cnccncc&#39;,&#39;cnccccc&#39;,&#39;ccnnncc&#39;,&#39;ccnnccc&#39;,&#39;ccncncc&#39;,&#39;ccncccc&#39;,&#39;cccnncc&#39;,&#39;cccnccc&#39;,&#39;ccccncc&#39;,&#39;ccccccc&#39;];
+	var topresults = [];
+	/*push to array any options over population*/
+	var len=store[digits].length;
+	
+	for(var i=0; i&lt;len; i++) {
+		var storeit = String(store[digits][i]);
+		var types = storeit.split(&#39;&#39;);
+		var total = 1;
+		var sub=types.length;
+		for(var a=0; a&lt;sub; a++) {
+			var type = String(types[a]);
+			var timesby;
+			if (type == &#39;n&#39;){
+				timesby = 10;
+			}
+			else if (type ==&#39;c&#39;){
+				timesby = 26;
+			}
+			total = total*timesby;
+		}
+		if (total &gt;= pop){
+			topresults.push(storeit);
+		}
+	} 
+	/*SUCCESS*/
+	
+    	/*find lowest in results*/
+    	var closeresults = [];
+    	var lowest = 8031810176;
+    	var len=topresults.length;
+	for(var j=0; j&lt;len; j++) {
+		var topit = String(topresults[j]);
+		var types = topit.split(&#39;&#39;);
+		var total = 1;
+		var sub=types.length;
+		for(var k=0; k&lt;sub; k++) {
+			var type = String(types[k]);
+			var timesby;
+			if (type == &#39;n&#39;){
+				timesby = 10;
+			}
+			else if (type ==&#39;c&#39;){
+				timesby = 26;
+			}
+			total = total*timesby;
+		}
+		if (total &lt;= lowest){
+			lowest = total;
+		}
+	} 
+	for(var l=0; l&lt;len; l++) {
+		var topit = String(topresults[l]);
+		var types = topit.split(&#39;&#39;);
+		var total = 1;
+		var sub=types.length;
+		for(var m=0; m&lt;sub; m++) {
+			var type = String(types[m]);
+			var timesby;
+			if (type == &#39;n&#39;){
+				timesby = 10;
+			}
+			else if (type ==&#39;c&#39;){
+				timesby = 26;
+			}
+			total = total*timesby;
+		}
+		if (total == lowest){
+			closeresults.push(topit);
+		}
+	} 
+	var excess = lowest-pop;
+	/*SUCCESS - EFF YEAH!!*/
+	
+	/*Find all Possibilities*/
+	var optionscat = closeresults.join(&quot;,&quot;);
+	$(&#39;.possible&#39;).html(loadGif+&#39;Loading Sample List. Please Wait...&#39;);
+	$.post(&#39;lp.php&#39;, { action : &#39;possibilities&#39;, pops : pop, options : optionscat }, function(data){
+	 	$(&#39;.possible&#39;).html(&#39;Plate Sample List&lt;br /&gt;Note: this list is for demostration purposes only, and may contain duplicates.&lt;br /&gt;&#39;+data);
+	 	runAll();
+	 });
+
+    	/*Final Output*/
+    	var resultsParsed = &#39;&#39;;
+    	var len=closeresults.length;
+	for(var k=0; k&lt;len; k++) {
+		var topc = String(closeresults[k]);
+		topc2 = topc.replace(/n/g, &quot;0&quot;);
+		topc2 = topc2.replace(/c/g, &quot;X&quot;);
+		resultsParsed += &quot;&lt;div class=&#39;plate&#39;&gt;&lt;span class=&#39;plateName&#39;&gt;&lt;/span&gt;&lt;span class=&#39;plateMain&#39;&gt;&quot;+topc2+&quot;&lt;/span&gt;&lt;/div&gt;&quot;;
+	}
+    	return $(this).html(&#39;&lt;span class=&quot;outputText&quot;&gt;Total Made: &#39;+lowest+
+    		&#39; | excess: &#39;+excess+
+    		&#39;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;outputText&quot;&gt;X = Any Letter | 0 = Any Number&lt;/span&gt;&lt;br /&gt;&#39;+resultsParsed); 
+};
+function addName(){
+	var plateName = $(&#39;.name&#39;).val();
+	plateName = plateName.replace(/&lt;(?:.|\n)*?&gt;/gm, &#39;&#39;);
+	$(&#39;.plateName&#39;).html(plateName);
+}
+function runAll(){
+	addName();
+	styling();
+	$(&#39;.content&#39;).find(&#39;.plate&#39;).each(function(){
+		$(this).plateSize();
+	});
+}
+					</pre>
+				<h2>in lp.run.js:</h2>
+<pre class="prettyprint linenums lang-js">
+$(document).ready(function(){
+				runAll();
+				$(&#39;.name&#39;).keyup(function(){
+					addName();
+					$(&#39;.content&#39;).find(&#39;.plate&#39;).each(function(){
+						$(this).plateSize();
+					});
+				});
+				
+				/*Run Program*/
+				$(&#39;.run&#39;).click(function(){
+					var population = $(&#39;.pop&#39;).val();
+					population = parseFloat(population);
+					$(&#39;.output&#39;).plateGen(population);
+					runAll();
+				});
+				$(&#39;.run10&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;Whitehall WI&#39;);
+					$(&#39;.pop&#39;).val(&#39;10&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;Whitehall WI&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;10&#39;);
+					runAll();
+				});
+				$(&#39;.run25&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;Grenville NM&#39;);
+					$(&#39;.pop&#39;).val(&#39;25&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;Grenville NM&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;25&#39;);
+					runAll();
+				});
+				$(&#39;.runUtah&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;Utah&#39;);
+					$(&#39;.pop&#39;).val(&#39;2817222&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;Utah&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;2817222&#39;);
+					runAll();
+				});
+				$(&#39;.runUS&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;United States&#39;);
+					$(&#39;.pop&#39;).val(&#39;311591917&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;United States&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;311591917&#39;);
+					runAll();
+				});
+				$(&#39;.runNA&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;North America&#39;);
+					$(&#39;.pop&#39;).val(&#39;528720588&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;North America&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;528720588&#39;);
+					runAll();
+				});
+				$(&#39;.runWorld&#39;).click(function(){
+					$(&#39;.name&#39;).val(&#39;3rd Planet, Sol&#39;);
+					$(&#39;.pop&#39;).val(&#39;6840507003&#39;);
+					$(&#39;.content .plate .plateName&#39;).html(&#39;3rd Planet, Sol&#39;);
+					$(&#39;.output&#39;).plateGen(&#39;6840507003&#39;);
+					runAll();
+				});
+				$(window).resize(function(){
+					runAll();
+				});
+});
+					</pre>
+				<h2>in lp.php</h2>
+<pre class="prettyprint linenums lang-php">
+&lt;?php
+/*Design and Development by Trent Oswald 2012*/
+	$action = $_POST[&#39;action&#39;];
+	$digits = array(&#39;num&#39;, &#39;char&#39;);
+	$digits[&#39;num&#39;] = array(&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;);
+	$digits[&#39;char&#39;] = array(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;,&#39;G&#39;,&#39;H&#39;,&#39;I&#39;,&#39;J&#39;,&#39;K&#39;,&#39;L&#39;,&#39;M&#39;,&#39;N&#39;,&#39;O&#39;,&#39;P&#39;,&#39;Q&#39;,&#39;R&#39;,&#39;S&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;W&#39;,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;);
+	$i = 0;
+	if ($action == &#39;possibilities&#39;){
+		$options = $_POST[&#39;options&#39;];
+		$optionsarray = explode(&#39;,&#39;, $options);
+		array_splice($optionsarray, 100);
+		$optioncount = count($optionsarray);
+		
+		$pop = $_POST[&#39;pops&#39;];
+		if ($pop &gt; 100){
+			$howmany = 100;
+		}
+		else{
+			$howmany = $pop;
+		}
+		
+		$i = 1;
+		$each = $howmany/$optioncount;
+		while ($i &lt;= $howmany){
+		
+			foreach ($optionsarray as $template){
+			 	$e = 1;
+			 	while ($e &lt;= $each){
+					shuffle($digits[&#39;num&#39;]);
+					shuffle($digits[&#39;char&#39;]);
+						/*template = &#39;nnccccn&#39; etc.*/
+					
+				/*mb_substr($str,$start,$length)*/
+					$d1 = mb_substr($template,0,1);
+					$d2 = mb_substr($template,1,1);
+					$d3 = mb_substr($template,2,1);
+					$d4 = mb_substr($template,3,1);
+					$d5 = mb_substr($template,4,1);
+					$d6 = mb_substr($template,5,1);
+					$d7 = mb_substr($template,6,1);
+					if ($d1 == &#39;n&#39;){
+						$array1 = $digits[&#39;num&#39;];
+					}
+					elseif ($d1 == &#39;c&#39;){
+						$array1 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array1 = array(&#39;&#39;);
+					}
+					
+					if ($d2 == &#39;n&#39;){
+						$array2 = $digits[&#39;num&#39;];
+					}
+					elseif ($d2 == &#39;c&#39;){
+						$array2 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array2 = array(&#39;&#39;);
+					}
+					
+					if ($d3 == &#39;n&#39;){
+						$array3 = $digits[&#39;num&#39;];
+					}
+					elseif ($d3 == &#39;c&#39;){
+						$array3 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array3 = array(&#39;&#39;);
+					}
+					
+					if ($d4 == &#39;n&#39;){
+						$array4 = $digits[&#39;num&#39;];
+					}
+					elseif ($d4 == &#39;c&#39;){
+						$array4 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array4 = array(&#39;&#39;);
+					}
+						
+					if ($d5 == &#39;n&#39;){
+						$array5 = $digits[&#39;num&#39;];
+					}
+					elseif ($d5 == &#39;c&#39;){
+						$array5 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array5 = array(&#39;&#39;);
+					}
+					
+					if ($d6 == &#39;n&#39;){
+						$array6 = $digits[&#39;num&#39;];
+					}
+					elseif ($d6 == &#39;c&#39;){
+						$array6 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array6 = array(&#39;&#39;);
+					}
+						
+					if ($d7 == &#39;n&#39;){
+						$array7 = $digits[&#39;num&#39;];
+					}
+					elseif ($d7 == &#39;c&#39;){
+						$array7 = $digits[&#39;char&#39;];
+					}
+					else{
+						$array7 = array(&#39;&#39;);
+					}
+						
+					$val1 = $array1[0];
+					$val2 = $array2[1];
+					$val3 = $array3[2];
+					$val4 = $array4[3];
+					$val5 = $array5[4];
+					$val6 = $array6[5];
+					$val7 = $array7[6];
+				
+					$result[]= $val1.$val2.$val3.$val4.$val5.$val6.$val7; 
+					$i++;
+					$e++;
+				}
+			}
+		
+		}	            
+				//diplay output 
+		foreach ($result as $poss){
+				echo &quot;&lt;div class=&#39;plate&#39;&gt;&lt;span class=&#39;plateName&#39;&gt;&lt;/span&gt;&lt;span class=&#39;plateMain&#39;&gt;&quot;.$poss.&quot;&lt;/span&gt;&lt;/div&gt;&quot;;
+		}
+				
+			
+			
+		
+		
+	exit(&#39;&#39;);
+	}
+?&gt;
+					</pre>
+		</div>
+		
+		
+		
+		
+<!-- Load Scripts After Content -->
+		<script type="text/javascript" src="http://tools.sbr.so/prettify/prettify.js"></script>
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		
+		<script src="lp.functions.js" type="text/javascript"></script>
+		<script src="lp.style.js" type="text/javascript"></script>
+		<script src="lp.run.js" type="text/javascript"></script>
+		
+	</body>
+<!---- Design and Development by Trent Oswald 2012 ---->
+</html>
